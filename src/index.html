@@ -1,14 +1,55 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>MyFirstProject</title>
-  <base href="/">
+<!DOCTYPE html>
+<html class="no-js"> <!--<![endif]-->
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>GreetGo</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
-<body>
-  <app-root></app-root>
-</body>
+
+  	<!--
+	//////////////////////////////////////////////////////
+
+	KVLVISYN Project with Angular:FIRST
+
+	//////////////////////////////////////////////////////
+	-->
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="assets/css/bootstrap.css">
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="assets/css/style.css">
+
+	</head>
+	<body>
+		<!-- menu -->
+	<menu></menu>
+<app-root></app-root>
+
+	<!-- jQuery -->
+	<script src="assets/js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="assets/js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="assets/js/jquery.waypoints.min.js"></script>
+	<!-- MAIN JS -->
+	<script src="assets/js/main.js"></script>
+	<script>
+
+	  //live search by KVLVISYN
+	  $(document).ready(function(){
+	  		$("#search").keyup(function(){
+	  				_this = this;
+	  				$.each($("#mytable tbody tr"), function() {
+	  						if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) === -1)
+	  							 $(this).hide();
+	  						else
+	  							 $(this).show();
+	  				});
+	  		});
+	  });
+	</script>
+
+	</body>
 </html>

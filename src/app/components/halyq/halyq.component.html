@@ -1,0 +1,49 @@
+<div id="fh5co-page">
+  <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+  <aside id="fh5co-aside" role="complementary" class="border js-fullheight">
+
+    <h1 id="fh5co-logo"><a href="index.html">GreetGo</a></h1>
+    <nav id="fh5co-main-menu" role="navigation">
+      <ul>
+        <li class="fh5co-active"><a (click)= "select('kaspi')">KaspiBank</a></li>
+        <li><a (click)= "select('sber')">SberBank</a></li>
+        <li><a (click)= "select('halyq')">HalyqBank</a></li>
+      </ul>
+    </nav>
+
+    <div class="fh5co-footer">
+      <p><small>  <span>&copy; Designed by <a href="https://vk.com/id464578733" target="_blank">Akzhol "KVLVISYN" Yeshmukhambetov</a> </span></small></p>
+    </div>
+
+  </aside>
+
+</div>
+<div id="fh5co-main">
+  <div class="container">
+    <h2>{{nameOfBank}}</h2>
+    <input type="text" [(ngModel)]="firstName" (input)="Search()" class="form-control">
+
+    <table class="table table-striped" id="mytable" cellspacing="0" style="width: 100%;">
+        <thead>
+            <tr role="row">
+                <th>Id</th>
+                <th>firstName</th>
+                <th>region</th>
+                <th>phoneNumber</th>
+                <th>emailAddress</th>
+              </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let o of employees' >
+            <td>{{o.Id}}</td>
+            <td>{{o.firstName}}</td>
+            <td>{{o.region}}</td>
+            <td>{{o.phoneNumber}}</td>
+            <td>{{o.emailAddress}}</td>
+          </tr>
+
+        </tbody>
+    </table>
+
+  </div>
+</div>

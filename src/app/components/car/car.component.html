@@ -1,0 +1,24 @@
+<div class="container">
+  <h4>Модель: {{car}} <small>{{model}}</small></h4>
+  <div class="alert alert-success">
+    Характеристики авто:
+    <ul>
+      <li>Скорость:<strong>{{speed}}</strong> км</li>
+      <li>Цвет:<strong>{{colors.car}}</strong></li>
+      <li>Салон:<strong>{{colors.salon}}</strong></li>
+      <li>Диски:<strong>{{colors.wheels}}</strong></li>
+    </ul>
+
+  </div>
+  <div class="alert alert-warning">
+    <h4>Возможности</h4>
+    <ul>
+      <li *ngFor="let opt of options; let i = index">{{opt}}</li>
+    </ul>
+  </div>
+  <h4>Выберите модель</h4>
+  <button class="btn btn-danger" (click)="carSelect('bmw')">BMW</button>
+  <button class="btn btn-info" (click)="carSelect('audi')">Audi</button>
+  <button class="btn btn-warning" (click)="carSelect('mrs')">MRS</button>
+
+</div>
